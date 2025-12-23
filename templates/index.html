@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <h2>QR Code Generator</h2>
+
+    <form method="POST">
+        <input type="text" name="data" placeholder="Enter text or URL" required>
+        <button type="submit">Generate QR</button>
+    </form>
+
+    {% if qr_generated %}
+        <h3>Your QR Code:</h3>
+        <img src="/static/qr.png" alt="QR Code">
+        <br><br>
+        <a href="/static/qr.png" download>Download QR Code</a>
+    {% endif %}
+</body>
+</html>
