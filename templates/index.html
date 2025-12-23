@@ -1,21 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>QR Code Generator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            margin-top: 20px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Card */
+        .card {
+            background: white;
+            margin-top: 40px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: auto;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h2>QR Code Generator</h2>
 
-    <form method="POST">
-        <input type="text" name="data" placeholder="Enter text or URL" required>
-        <button type="submit">Generate QR</button>
-    </form>
+    <!-- Top Name -->
+    <div class="header">
+        
+    </div>
 
-    {% if qr_generated %}
-        <h3>Your QR Code:</h3>
-        <img src="/static/qr.png" alt="QR Code">
-        <br><br>
-        <a href="/static/qr.png" download>Download QR Code</a>
-    {% endif %}
+    <!-- Main Card -->
+    <div class="card">
+        <h2>QR Code Generator</h2>
+
+        <form method="POST">
+            <input type="text" name="data" placeholder="Enter text or URL" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+
+        {% if qr_generated %}
+            <img src="/static/qr.png" alt="QR Code">
+            <br>
+            <a href="/static/qr.png" download>Download QR Code</a>
+        {% endif %}
+    </div>
+
+    <!-- Bottom Name -->
+    <div class="footer">
+        © 2025 | Built by Hafees Muhammed
+    </div>
+
 </body>
 </html>
